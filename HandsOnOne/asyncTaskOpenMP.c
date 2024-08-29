@@ -7,7 +7,8 @@ int main(int argc, char **argv)
 {
   int n = atoi(argv[1]);
   int block_size = atoi(argv[2]);
-  int matrix[SIZE_MATRIX][SIZE_MATRIX], k1 = 10, k2 = 20, k3 = 30, k4 = 40, k5 = 50;
+  int matrix[SIZE_MATRIX][SIZE_MATRIX];
+  int k[5] = {10, 20, 30, 40, 50}; 
   // adicionando as variáveis k3 e k4 para poder multiplicar os valores da matriz
   int i, j, row, column;
 
@@ -32,34 +33,34 @@ int main(int argc, char **argv)
     {
       for(row = 0; row < n; row++)
         for(column = 0; column < block_size; column++)
-          matrix[row][column] *= k1;
+          matrix[row][column] *= k[id];
     }
 
     if(id == 1)
     {
       for(row = 0; row < n; row++)
         for(column = block_size; column < 2 * block_size; column++)
-          matrix[row][column] *= k2;
+          matrix[row][column] *= k[id];
     }
 
     if(id == 2)
     {
         for(row = 0; row < n; row++)
         for(column = 2 * block_size; column < 3 * block_size; column++)
-          matrix[row][column] *= k3;
+          matrix[row][column] *= k[id];
     }
 
     if(id == 3)
     {
         for(row = 0; row < n; row++)
         for(column = 3 * block_size; column < 4 * block_size; column++)
-          matrix[row][column] *= k4;
+          matrix[row][column] *= k[id];
     }
     if (id == 4)
     {
         for(row = 0; row < n; row++)
         for(column = 4 * block_size; column < 5 * block_size; column++)
-          matrix[row][column] *= k5;
+          matrix[row][column] *= k[id];
     }
 
    }
@@ -74,3 +75,9 @@ int main(int argc, char **argv)
 
   return 0;
 }
+
+// What does the code do from the compilation and execution of the previous code?
+// Utilizes 5 thread to run the code in a prallel way
+
+// How would it be possible to extend the code so that the five threads perform asynchronous tasks?
+// adding the if statement to the parallel code and adding the new values of k to the matrix
