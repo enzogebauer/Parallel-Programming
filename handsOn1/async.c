@@ -28,7 +28,6 @@ int main(int argc, char **argv)
   #pragma omp parallel private(row, column)
   {
     int id = omp_get_thread_num();
- printf("Ola Mundo desde a thread %d \n", id);
     if(id == 0)
     {
       for(row = 0; row < n; row++)
@@ -64,7 +63,6 @@ int main(int argc, char **argv)
     }
 
    }
-   //pragma omp
 
   for(i = 0; i < n; i++)
   {
@@ -76,8 +74,3 @@ int main(int argc, char **argv)
   return 0;
 }
 
-// What does the code do from the compilation and execution of the previous code?
-// Utilizes 5 thread to run the code in a prallel way
-
-// How would it be possible to extend the code so that the five threads perform asynchronous tasks?
-// adding the if statement to the parallel code and adding the new values of k to the matrix
