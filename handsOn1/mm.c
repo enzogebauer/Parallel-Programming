@@ -98,7 +98,7 @@ int main (int argc, char **argv)
   double speedup = sequential_time / parallel_collapse_reduction_time;
 
   writeResultsToFile(size, sequential_time, parallel_time, parallel_collapse_reduction_time, speedup);
-  printf("Speedup: %f\n", speedup);
+  // printf("Speedup: %f\n", speedup);
 
   return 0;
 }
