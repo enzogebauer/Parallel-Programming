@@ -25,7 +25,7 @@ double integral_parallel(double a, double b, int n)
     double s = 0.0;
     int i;
 
-    #pragma omp parallel for private(i) shared(a, b, h, n) reduction(+:s)
+    #pragma omp parallel for reduction(+:s)
     for (i = 0; i < n; i++) {
         s += f(a + h * (i + 0.5));
     }
